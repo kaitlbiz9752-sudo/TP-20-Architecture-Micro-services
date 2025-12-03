@@ -384,47 +384,8 @@ Flux pour une requête via Gateway :
 
 ---
 
-## 8. Problèmes fréquents
 
-- **Service non visible dans Eureka :**
-  - Vérifier le nom de l’application (`spring.application.name`).  
-  - Vérifier l’URL de Eureka (`defaultZone`).  
-  - Vérifier que Eureka est bien démarré.
 
-- **Erreur de connexion MySQL :**
-  - Vérifier l’URL, l’utilisateur et le mot de passe.  
-  - Vérifier que MySQL tourne sur le port attendu.
 
-- **Lombok ne génère rien :**
-  - Activer l’annotation processing dans l’IDE.  
-  - Vérifier la présence de la dépendance Lombok.
 
-- **Appels inter-services qui échouent :**
-  - Vérifier les URLs configurées (surtout celles de la Gateway).  
-  - Vérifier que tous les services sont démarrés.  
-  - Vérifier les ports et les noms des services.
-
----
-
-## 9. Extensions possibles
-
-- **Sécurité** : ajout de Spring Security et OAuth2 pour sécuriser les API.  
-- **Résilience** : utilisation de Circuit Breaker (Resilience4j, Hystrix).  
-- **Monitoring** : Spring Boot Actuator, Prometheus, Grafana.  
-- **Traçabilité** : Spring Cloud Sleuth, Zipkin.  
-- **Configuration centralisée** : Spring Cloud Config.  
-- **Documentation API** : Swagger / OpenAPI.
-
----
-
-## 10. Points clés à retenir
-
-- Chaque microservice dispose de **sa propre base de données**.  
-- La **communication** entre services se fait via des **API REST**.  
-- Les services sont **découverts dynamiquement** via Eureka.  
-- La **Gateway** joue le rôle de **point d’entrée unique**.  
-- Les configurations sont externalisées dans des fichiers `application.yml`.  
-- La **gestion des erreurs** et des timeouts est importante pour la résilience.  
-
-Cette architecture constitue une base solide pour construire des systèmes distribués, évolutifs et maintenables.
 
