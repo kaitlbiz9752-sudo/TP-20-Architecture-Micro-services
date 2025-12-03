@@ -1,0 +1,12 @@
+server:
+  port: 8761  # Port standard pour Eureka Server
+
+eureka:
+  client:
+    register-with-eureka: false  # Ne pas s'enregistrer auprès de lui-même
+    fetch-registry: false        # Ne pas récupérer le registre des services
+
+logging:
+  level:
+    com.netflix.eureka: OFF      # Réduire les logs verbeux d'Eureka
+    com.netflix.discovery: OFF   # Réduire les logs verbeux de Discovery

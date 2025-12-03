@@ -1,0 +1,21 @@
+server:
+  port: 8888  # Port de la Gateway
+
+spring:
+  application:
+    name: Gateway  # Nom du service
+  cloud:
+    discovery:
+      enabled: true  # Active la découverte de services
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # Active le routage basé sur les services découverts
+          lower-case-service-id: true  # Permet d'utiliser des noms de service en minuscules
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # URL du serveur Eureka
