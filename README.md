@@ -85,6 +85,13 @@ Accès typiques :
 3. Vérifier l’affichage du tableau de bord Eureka.  
    - Au départ, il est normal de voir “No instances available”.
 
+
+
+
+<img width="1919" height="1016" alt="image" src="https://github.com/user-attachments/assets/0adf73e6-feec-4695-ac43-93b102434273" />
+
+
+
 ---
 
 ## 4. Microservice SERVICE-CLIENT
@@ -97,6 +104,10 @@ Le microservice **SERVICE-CLIENT** gère les clients (nom, âge, etc.) et expose
    - Group : `com.example`
    - Artifact / Name : `client-service`
    - Dépendances : Spring Web, Spring Data JPA, MySQL Driver, Eureka Discovery Client, Lombok
+
+
+
+<img width="609" height="954" alt="image" src="https://github.com/user-attachments/assets/27468ed6-f7df-480a-8c0b-77cc264080af" />
 
 ### 4.2. Configuration de la base de données et d’Eureka
 
@@ -114,6 +125,12 @@ Dans le fichier `application.yml` :
 4. Configurer Eureka :
    - URL du serveur Eureka (http://localhost:8761/eureka/).  
    - Utilisation de l’adresse IP pour l’enregistrement (option de confort).
+
+
+
+<img width="1271" height="418" alt="image" src="https://github.com/user-attachments/assets/fb261093-c405-4267-b8e4-60c31bd1b8b2" />
+
+
 
 ### 4.3. Création de l’entité Client
 
@@ -160,11 +177,20 @@ Dans le fichier `application.yml` :
    - Annoter avec `@SpringBootApplication`.  
    - Annoter avec `@EnableEurekaClient` pour activer l’enregistrement dans Eureka.
 
+
+
+
+<img width="607" height="904" alt="image" src="https://github.com/user-attachments/assets/240097f5-e19a-4978-9147-478c9ff0994d" />
+
 ---
 
 ## 5. Service Gateway (Spring Cloud Gateway)
 
 La **Gateway** sert de point d’entrée unique, en se basant sur Eureka pour découvrir les services.
+
+
+
+<img width="647" height="911" alt="image" src="https://github.com/user-attachments/assets/2afefbb9-04d4-4a3d-a32c-1202456a5c80" />
 
 ### 5.1. Dépendances
 
@@ -208,6 +234,10 @@ Dans `application.yml` :
 
 Le microservice **SERVICE-CAR** gère les voitures et récupère également les informations du client propriétaire via le microservice client, en passant par la Gateway.
 
+
+
+<img width="616" height="958" alt="image" src="https://github.com/user-attachments/assets/d5d04b8d-dfd2-4962-bca6-e8e552970c39" />
+
 ### 6.1. Configuration de la base de données et d’Eureka
 
 1. Créer un projet Spring Boot pour le service voiture, avec les dépendances nécessaires :
@@ -219,7 +249,11 @@ Le microservice **SERVICE-CAR** gère les voitures et récupère également les 
    - Configurer JPA pour la création/mise à jour du schéma et l’affichage des requêtes SQL.  
    - Configurer Eureka avec l’URL du serveur et l’option d’utilisation de l’adresse IP.
 
-> Bonne pratique : chaque microservice dispose de sa propre base de données (ici `clientservicedb` pour le service client, `carservicedb` pour le service voiture).
+
+
+
+
+<img width="1279" height="322" alt="image" src="https://github.com/user-attachments/assets/c950c1e2-dd99-4eff-b166-b9c9d8dae857" />
 
 ### 6.2. Entités et modèles
 
@@ -291,6 +325,10 @@ Le microservice **SERVICE-CAR** gère les voitures et récupère également les 
 2. Accéder au tableau de bord Eureka : http://localhost:8761  
 3. Vérifier que le service `SERVICE-CAR` apparaît dans la liste des applications enregistrées.
 
+
+
+<img width="516" height="691" alt="image" src="https://github.com/user-attachments/assets/ba6e9e76-15fa-468c-924d-40cf056945ad" />
+
 ---
 
 ## 7. Ordre de démarrage global et tests
@@ -310,6 +348,11 @@ Le microservice **SERVICE-CAR** gère les voitures et récupère également les 
   - `SERVICE-CLIENT`  
   - `SERVICE-CAR`  
   - `Gateway` (si enregistré)
+
+
+<img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/0529af9e-95bb-40b8-a320-85bb1229c52c" />
+
+
 
 ### 7.3. Tests des endpoints
 
@@ -384,3 +427,4 @@ Flux pour une requête via Gateway :
 - La **gestion des erreurs** et des timeouts est importante pour la résilience.  
 
 Cette architecture constitue une base solide pour construire des systèmes distribués, évolutifs et maintenables.
+
